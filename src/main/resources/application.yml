@@ -1,0 +1,34 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    timeout: 10000ms
+    database: 3
+    lettuce:
+      pool:
+        enabled: true
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+  cache:
+    type: redis
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+# Logging
+logging:
+  level:
+    com.minhlq.restclientservice: DEBUG
+    org.springframework.web: ERROR
+
+# Application
+app:
+  base-url: http://localhost:8080
+  external-static-resource-location:
+  external-static-resource-url:
